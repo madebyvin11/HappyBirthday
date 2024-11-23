@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Nova Birthday</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <link rel="icon" href="Fly Bats logo.png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #1a103d;
+            color: white;
+            margin: 0;
+        }
+
+        #text2 {
+            margin-bottom: 20px;
+        }
+
+        #text1 {
+            top: 50px;
+            left: 50px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Memberikan jarak antar elemen */
+        }
+
+        #candle {
+            margin-bottom: 30px;
+        }
+
+        #message {
+            font-size: 20px;
+            text-align: center;
+            z-index: 10;
+            display: none; /* Awalnya tersembunyi */
+        }
+
+        #button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            z-index: 10; 
+            display: none; /* Awalnya tersembunyi */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text1">🎂It's Nova Birthday 🎉🎉🎉</h1>
+    <h1 id="test2">Blow the candle</h1>
+    <div id="container">
+        <div id="candle">
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div class="stripe"></div>
+            <div id="top">
+                <div class="smoke"></div>
+                <div class="smoke"></div>
+                <div class="smoke"></div>
+                <div id="knot"></div>
+                <div class="burn" id="flame"></div>
+            </div>
+        </div>
+        <div id="message">"Hi Nova, it's been a long time since we saw each other and I can't believe today is already November 23 2024 and it's your birthday, so happy birthday.<br> but before that I want to apologize because I couldn't meet you and say it in person so I made a website for you, so yeah, do you want to see? Press the button below, hehehe"</div>
+        <button id="button" onclick="location.href='halaman2.html'">Go to the Next Page</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Fungsi meniup lilin
+            $('#candle').on('click', function () {
+                // Sembunyikan api lilin
+                $('#flame').fadeOut(500, function () {
+                    // Tampilkan asap setelah api menghilang
+                    $('.smoke').fadeIn(500);
+                });
+
+                // Tampilkan pesan
+                $('#message').fadeIn(1000);
+
+                // Tampilkan tombol setelah pesan muncul
+                setTimeout(function () {
+                    $('#button').fadeIn(500);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
